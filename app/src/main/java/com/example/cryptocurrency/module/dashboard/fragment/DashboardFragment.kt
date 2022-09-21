@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.example.cryptocurrency.MainActivity
 import com.example.cryptocurrency.R
 import com.example.cryptocurrency.databinding.FragmentDashboardBinding
 import com.example.cryptocurrency.module.dashboard.adapter.DashboardAdapter
@@ -27,6 +29,13 @@ class DashboardFragment : Fragment() {
 
         setDashboard()
 
+        activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    activity!!.finish()
+                }
+            })
+
         return binding.root
     }
 
@@ -40,6 +49,7 @@ class DashboardFragment : Fragment() {
             adapter = DashboardAdapter(this@DashboardFragment)
 
             setCurrentItem(1, false)
+            (activity as MainActivity).setBottomMenuItem(R.id.stocks)
 
             offscreenPageLimit = 1
 
@@ -63,6 +73,31 @@ class DashboardFragment : Fragment() {
                 }
             }
             addItemDecoration(itemDecoration)
+
+            viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+                override fun onPageSelected(position: Int) {
+                    super.onPageSelected(position)
+
+                    when (position) {
+                        0 -> {
+                            (activity as MainActivity).setBottomMenuItem(R.id.currencies)
+                        }
+                        1 -> {
+                            (activity as MainActivity).setBottomMenuItem(R.id.stocks)
+                        }
+                        else -> {
+                            (activity as MainActivity).setBottomMenuItem(R.id.options)
+                        }
+                    }
+                }
+            })
         }
+    }
+
+    /**
+     * Set category in adapter
+     */
+    fun setCategory(item: Int) {
+        viewPager.setCurrentItem(item, true)
     }
 }

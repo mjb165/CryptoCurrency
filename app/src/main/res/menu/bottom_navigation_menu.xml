@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/currencies"
+        android:enabled="true"
+        android:icon="@drawable/currencies_menu"
+        android:title="@string/currencies_title"/>
+    <item
+        android:id="@+id/stocks"
+        android:enabled="true"
+        android:icon="@drawable/stocks_menu"
+        android:title="@string/stocks_title"/>
+    <item
+        android:id="@+id/options"
+        android:enabled="true"
+        android:icon="@drawable/options_menu"
+        android:title="@string/options_title"/>
+</menu>

@@ -1,8 +1,8 @@
-package com.example.cryptocurrency.module.stocks.model
+package com.example.cryptocurrency.model
 
 import com.google.gson.annotations.SerializedName
 
-data class StocksData(
+data class MarketData(
     @SerializedName("adjusted")
     val adjusted: Boolean,
     @SerializedName("queryCount")

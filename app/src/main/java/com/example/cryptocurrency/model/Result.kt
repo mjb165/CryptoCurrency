@@ -1,4 +1,4 @@
-package com.example.cryptocurrency.module.stocks.model
+package com.example.cryptocurrency.model
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CategoryFontStyle">
+        <item name="android:textSize">35sp</item>
+        <item name="android:textColor">@color/gray_300</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="InfoFontStyle">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/gray_300</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ItemDescriptionFontStyle">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/gray_300</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ItemFontStyle">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/gray_300</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+</resources>

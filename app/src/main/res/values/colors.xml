@@ -7,4 +7,35 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="colorBlack30">#4D000000</color>
+    <color name="colorBlack40">#66000000</color>
+    <color name="colorBlack70">#B3000000</color>
+    <color name="colorBlack80">#CD000000</color>
+    <color name="colorBlack95">#F3000000</color>
+
+    <color name="gray_50">#FAFAFA</color>
+    <color name="gray_100">#F5F5F5</color>
+    <color name="gray_200">#EEEEEE</color>
+    <color name="gray_300">#E6E6E6</color>
+    <color name="gray_400">#BDBDBD</color>
+    <color name="gray_600">#757575</color>
+    <color name="gray_650">#80757575</color>
+    <color name="gray_800">#424242</color>
+    <color name="gray_900">#212121</color>
+
+    <color name="blue_400">#42A5F5</color>
+    <color name="blue_A200">#448AFF</color>
+    <color name="blue_A700">#2962FF</color>
+    <color name="blue_gray_500">#607D8B</color>
+    <color name="light_green_A700">#64DD17</color>
+    <color name="light_green_A800">#5BC600</color>
+    <color name="light_blue">#0096FF</color>
+    <color name="red_A600">#ff2727</color>
+    <color name="red_A700">#D50000</color>
+    <color name="red_A800">#C80000</color>
+    <color name="yellow_A700">#FFD600</color>
+    <color name="amber_600">#FFB300</color>
+    <color name="amber_660">#FFE0B2</color>
+    <color name="transparent">#00FFFFFF</color>
 </resources>

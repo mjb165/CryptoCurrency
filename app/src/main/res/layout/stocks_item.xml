@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/stockTitleTextView"
+        style="@style/ItemFontStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:text="Symbol"
+        app:layout_constraintEnd_toStartOf="@+id/openPriceTitleTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/stockSymbolTextView"
+        style="@style/ItemDescriptionFontStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="APLE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/stockTitleTextView"
+        app:layout_constraintStart_toStartOf="@+id/stockTitleTextView"
+        app:layout_constraintTop_toBottomOf="@+id/stockTitleTextView" />
+
+    <TextView
+        android:id="@+id/openPriceTitleTextView"
+        style="@style/ItemFontStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Open"
+        app:layout_constraintEnd_toStartOf="@+id/closePriceTitleTextView"
+        app:layout_constraintStart_toEndOf="@+id/stockTitleTextView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/openPriceTextView"
+        style="@style/ItemDescriptionFontStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="125.5"
+        app:layout_constraintEnd_toEndOf="@+id/openPriceTitleTextView"
+        app:layout_constraintStart_toStartOf="@+id/openPriceTitleTextView"
+        app:layout_constraintTop_toBottomOf="@+id/openPriceTitleTextView" />
+
+    <TextView
+        android:id="@+id/closePriceTitleTextView"
+        style="@style/ItemFontStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Close"
+        app:layout_constraintEnd_toStartOf="@+id/highPriceTitleTextView"
+        app:layout_constraintStart_toEndOf="@+id/openPriceTitleTextView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/closePriceTextView"
+        style="@style/ItemDescriptionFontStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="135.5"
+        app:layout_constraintEnd_toEndOf="@+id/closePriceTitleTextView"
+        app:layout_constraintStart_toStartOf="@+id/closePriceTitleTextView"
+        app:layout_constraintTop_toBottomOf="@+id/closePriceTitleTextView" />
+
+    <TextView
+        android:id="@+id/highPriceTitleTextView"
+        style="@style/ItemFontStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="High"
+        app:layout_constraintEnd_toStartOf="@+id/lowPriceTitleTextView"
+        app:layout_constraintStart_toEndOf="@+id/closePriceTitleTextView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/highPriceTextView"
+        style="@style/ItemDescriptionFontStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="150.5"
+        app:layout_constraintEnd_toEndOf="@+id/highPriceTitleTextView"
+        app:layout_constraintStart_toStartOf="@+id/highPriceTitleTextView"
+        app:layout_constraintTop_toBottomOf="@+id/highPriceTitleTextView" />
+
+    <TextView
+        android:id="@+id/lowPriceTitleTextView"
+        style="@style/ItemFontStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:text="Low"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/highPriceTitleTextView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lowPriceTextView"
+        style="@style/ItemDescriptionFontStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100.5"
+        app:layout_constraintEnd_toEndOf="@+id/lowPriceTitleTextView"
+        app:layout_constraintStart_toStartOf="@+id/lowPriceTitleTextView"
+        app:layout_constraintTop_toBottomOf="@+id/lowPriceTitleTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

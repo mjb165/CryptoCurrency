@@ -1,5 +1,10 @@
 <resources>
-    <string name="app_name">Crypto Currency</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">Currencies</string>
+    <string name="data_loading">Loading…</string>
+    <string name="currencies_title">CURRENCIES</string>
+    <string name="stocks_title">STOCKS</string>
+    <string name="options_title">OPTIONS</string>
+
+    <string name="request_failed_message">Request failed…</string>
+
 </resources>

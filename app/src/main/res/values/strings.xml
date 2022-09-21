@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Currencies</string>
+    <string name="app_name">Market</string>
     <string name="data_loading">Loading…</string>
     <string name="currencies_title">CURRENCIES</string>
     <string name="stocks_title">STOCKS</string>

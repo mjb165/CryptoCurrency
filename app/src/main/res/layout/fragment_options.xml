@@ -24,11 +24,11 @@
             android:id="@+id/optionsImageView"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/optionsTextView"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/progressLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -40,33 +40,76 @@
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
             android:background="@color/gray_300"
-            app:layout_constraintBottom_toTopOf="@+id/optionsTextView"
+            app:layout_constraintBottom_toTopOf="@+id/currenciesTextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/optionsImageView" />
+            app:layout_constraintTop_toBottomOf="@+id/progressLayout" />
 
         <TextView
-            android:id="@+id/optionsTextView"
+            android:id="@+id/currenciesTextView"
             style="@style/CategoryFontStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="20dp"
             android:text="@string/options_title"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/optionsImageView" />
+            app:layout_constraintTop_toBottomOf="@+id/dividerView" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/entryImageButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/tick"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/infoTextView"
+            style="@style/InfoFontStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Click and show"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/entryImageButton"
+            app:layout_constraintStart_toStartOf="@+id/entryImageButton"
+            app:layout_constraintTop_toBottomOf="@+id/entryImageButton" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dataRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            android:orientation="vertical"
+            android:scrollbars="none"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <include
             android:id="@+id/progressLayout"
             layout="@layout/layout_progress"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="30dp"
             android:elevation="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/dividerView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/optionsImageView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

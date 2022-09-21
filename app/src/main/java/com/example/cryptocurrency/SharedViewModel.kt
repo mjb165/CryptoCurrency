@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.cryptocurrency.data.Constant
-import com.example.cryptocurrency.model.MarketData
+import com.example.cryptocurrency.networking.model.MarketData
 import com.example.cryptocurrency.networking.ApiService
 import com.example.cryptocurrency.networking.RetrofitInstance
 import kotlinx.coroutines.CoroutineDispatcher
@@ -17,45 +17,78 @@ class SharedViewModel : ViewModel() {
 
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO
 
-    private val _marketData: MutableLiveData<MarketData?> = MutableLiveData()
-    val marketData: LiveData<MarketData?> = _marketData
+    private val _stocksData: MutableLiveData<MarketData?> = MutableLiveData()
+    val stocksData: LiveData<MarketData?> = _stocksData
+
+    private val _currenciesData: MutableLiveData<MarketData?> = MutableLiveData()
+    val currenciesData: LiveData<MarketData?> = _currenciesData
+
+    private val _optionsData: MutableLiveData<MarketData?> = MutableLiveData()
+    val optionsData: LiveData<MarketData?> = _optionsData
 
     private val service = RetrofitInstance
         .getRetrofitInstance()
         .create(ApiService::class.java)
 
+    /**
+     * Get data from API
+     */
     suspend fun getStocksData() {
         val response = withContext(viewModelScope.coroutineContext + dispatcher) {
             /**
              * Delay for chance to see loading screen
              */
-            delay(3000)
+            delay(1000)
             return@withContext service.getDailyStocks(Constant.API_KEY)
         }
         when (response.code()) {
             200 -> {
-                _marketData.value = response.body()
+                _stocksData.value = response.body()
             }
             else -> {
-                _marketData.value = null
+                _stocksData.value = null
             }
         }
     }
 
+    /**
+     * Get data from API
+     */
     suspend fun getCurrenciesData() {
         val response = withContext(viewModelScope.coroutineContext + dispatcher) {
             /**
              * Delay for chance to see loading screen
              */
-            delay(3000)
+            delay(1000)
             return@withContext service.getDailyCurrencies(Constant.API_KEY)
         }
         when (response.code()) {
             200 -> {
-                _marketData.value = response.body()
+                _currenciesData.value = response.body()
             }
             else -> {
-                _marketData.value = null
+                _currenciesData.value = null
+            }
+        }
+    }
+
+    /**
+     * Get data from API
+     */
+    suspend fun getOptionsData() {
+        val response = withContext(viewModelScope.coroutineContext + dispatcher) {
+            /**
+             * Delay for chance to see loading screen
+             */
+            delay(1000)
+            return@withContext service.getDailyOptions(Constant.API_KEY)
+        }
+        when (response.code()) {
+            200 -> {
+                _optionsData.value = response.body()
+            }
+            else -> {
+                _optionsData.value = null
             }
         }
     }

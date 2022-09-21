@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -17,9 +16,8 @@ import com.example.cryptocurrency.R
 import com.example.cryptocurrency.SharedViewModel
 import com.example.cryptocurrency.data.Constant
 import com.example.cryptocurrency.databinding.FragmentStocksBinding
-import com.example.cryptocurrency.module.stocks.adapter.StocksRecyclerAdapter
-import com.example.cryptocurrency.model.MarketData
-import kotlinx.coroutines.launch
+import com.example.cryptocurrency.module.adapter.MarketRecyclerAdapter
+import com.example.cryptocurrency.networking.model.MarketData
 
 class StocksFragment : Fragment() {
 
@@ -40,9 +38,8 @@ class StocksFragment : Fragment() {
 
         setRecyclerView()
         getLogo()
-        getStocksData()
 
-        viewModel.marketData.observe(viewLifecycleOwner) { stocksData ->
+        viewModel.stocksData.observe(viewLifecycleOwner) { stocksData ->
             if (stocksData != null) {
                 this.marketData = stocksData
                 with(binding) {
@@ -66,7 +63,7 @@ class StocksFragment : Fragment() {
                 infoTextView.visibility = View.GONE
                 entryImageButton.visibility = View.GONE
 
-                recyclerView.adapter = StocksRecyclerAdapter(marketData)
+                recyclerView.adapter = MarketRecyclerAdapter(marketData)
                 recyclerView.visibility = View.VISIBLE
             }
         }
@@ -80,12 +77,6 @@ class StocksFragment : Fragment() {
     private fun getLogo() {
         setProgressLayout(true, getString(R.string.data_loading))
         Glide.with(this).load(Constant.STOCKS_LOGO_URL).into(binding.stocksImageView)
-    }
-
-    private fun getStocksData() {
-        lifecycleScope.launch {
-            viewModel.getStocksData()
-        }
     }
 
     /**

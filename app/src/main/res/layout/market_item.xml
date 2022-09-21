@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/stockTitleTextView"
+        android:id="@+id/marketTitleTextView"
         style="@style/ItemFontStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,16 +17,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/stockSymbolTextView"
+        android:id="@+id/marketSymbolTextView"
         style="@style/ItemDescriptionFontStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:text="APLE"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/stockTitleTextView"
-        app:layout_constraintStart_toStartOf="@+id/stockTitleTextView"
-        app:layout_constraintTop_toBottomOf="@+id/stockTitleTextView" />
+        app:layout_constraintEnd_toEndOf="@+id/marketTitleTextView"
+        app:layout_constraintStart_toStartOf="@+id/marketTitleTextView"
+        app:layout_constraintTop_toBottomOf="@+id/marketTitleTextView" />
 
     <TextView
         android:id="@+id/openPriceTitleTextView"
@@ -37,7 +36,7 @@
         android:layout_marginTop="5dp"
         android:text="Open"
         app:layout_constraintEnd_toStartOf="@+id/closePriceTitleTextView"
-        app:layout_constraintStart_toEndOf="@+id/stockTitleTextView"
+        app:layout_constraintStart_toEndOf="@+id/marketTitleTextView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView

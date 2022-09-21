@@ -1,4 +1,4 @@
-package com.example.cryptocurrency.model
+package com.example.cryptocurrency.networking.model
 
 import com.google.gson.annotations.SerializedName
 
